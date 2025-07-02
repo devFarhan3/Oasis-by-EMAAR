@@ -3399,6 +3399,10 @@ iframe {
 
 @media (max-width: 640px) {
 
+  section, .section {
+    padding: 40px 0;
+  }
+
   .centered-border::after {
     transform: translateX(-150%);
   }

@@ -554,101 +554,108 @@
             <!-- Property cards will be injected here by JavaScript -->
           </div>
 
-          <script>
-            const properties = [
-              {
-                name: "Address Villas Tiarra",
-                bedrooms: "4, 5 and 6 Bedroom Villas",
-                price: "13.2M AED",
-                image: "assets/img/o1.webp",
-                buttons: [
-                  { text: "LEARN MORE", type: "primary" },
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              },
-              {
-                name: "Laviata",
-                bedrooms: "6 and 7 Bedroom Villas",
-                price: "36M AED",
-                image: "assets/img/o2.webp",
-                buttons: [
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              },
-              {
-                name: "Mirage",
-                bedrooms: "5 and 6 Bedroom Villas",
-                price: "15.6M AED",
-               image: "assets/img/o3.webp",
-                buttons: [
-                  { text: "LEARN MORE", type: "primary" },
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              },
-              {
-                name: "Palmiera 3",
-                bedrooms: "6 and 7 Bedroom Villas",
-                price: "36M AED",
-                 image: "assets/img/o4.webp",
-                buttons: [
-                  { text: "LEARN MORE", type: "primary" },
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              }
-            ];
+       <script>
+    const properties = [
+      {
+        name: "Address Villas Tiarra",
+        bedrooms: "4, 5 and 6 Bedroom Villas",
+        price: "13.2M AED",
+        image: "assets/img/o1.webp",
+        buttons: [
+          // { text: "LEARN MORE", type: "primary", href: "#learn-more-tiarra" }, // Example href
+          { text: "DOWNLOAD BROCHURE", type: "outline", href: "#contact" } // Example href
+        ]
+      },
+      {
+        name: "Laviata",
+        bedrooms: "6 and 7 Bedroom Villas",
+        price: "36M AED",
+        image: "assets/img/o2.webp",
+        buttons: [
+         { text: "DOWNLOAD BROCHURE", type: "outline", href: "#contact" } // Example href
+        ]
+      },
+      {
+        name: "Mirage",
+        bedrooms: "5 and 6 Bedroom Villas",
+        price: "15.6M AED",
+        image: "assets/img/o3.webp",
+        buttons: [
+          // { text: "LEARN MORE", type: "primary", href: "#learn-more-mirage" }, // Example href
+         { text: "DOWNLOAD BROCHURE", type: "outline", href: "#contact" } // Example href
+        ]
+      },
+      {
+        name: "Palmiera 3",
+        bedrooms: "6 and 7 Bedroom Villas",
+        price: "36M AED",
+        image: "assets/img/o4.webp",
+        buttons: [
+          // { text: "LEARN MORE", type: "primary", href: "#learn-more-palmiera" }, // Example href
+          { text: "DOWNLOAD BROCHURE", type: "outline", href: "#contact" } // Example href
+        ]
+      }
+    ];
 
-            document.addEventListener('DOMContentLoaded', () => {
-              const container = document.getElementById('property-cards-container');
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('property-cards-container');
 
-              properties.forEach(property => {
-                const colDiv = document.createElement('div');
-                colDiv.className = 'col-12 col-md-6 col-lg-6 d-flex align-items-stretch gy-3';
+      properties.forEach(property => {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-12 col-md-6 col-lg-6 d-flex align-items-stretch gy-3';
 
-                const cardDiv = document.createElement('div');
-                cardDiv.className = 'property-card w-100';
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'property-card w-100';
 
-                const img = document.createElement('img');
-                img.src = property.image;
-                img.alt = property.name;
-                img.onerror = function () {
-                  this.onerror = null;
-                  this.src = 'https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found';
-                };
+        const img = document.createElement('img');
+        img.src = property.image;
+        img.alt = property.name;
+        img.onerror = function () {
+          this.onerror = null;
+          this.src = 'https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found';
+        };
 
-                const cardBodyDiv = document.createElement('div');
-                cardBodyDiv.className = 'card-body';
+        const cardBodyDiv = document.createElement('div');
+        cardBodyDiv.className = 'card-body';
 
-                const title = document.createElement('h5');
-                title.className = 'card-title';
-                title.textContent = property.name;
+        const title = document.createElement('h5');
+        title.className = 'card-title';
+        title.textContent = property.name;
 
-                const bedrooms = document.createElement('p');
-                bedrooms.className = 'card-text';
-                bedrooms.textContent = property.bedrooms;
+        const bedrooms = document.createElement('p');
+        bedrooms.className = 'card-text';
+        bedrooms.textContent = property.bedrooms;
 
-                const price = document.createElement('p');
-                price.className = 'price-text';
-                price.textContent = `Starting Price ${property.price}`;
+        const price = document.createElement('p');
+        price.className = 'price-text';
+        price.textContent = `Starting Price ${property.price}`;
 
-                cardBodyDiv.appendChild(title);
-                cardBodyDiv.appendChild(bedrooms);
-                cardBodyDiv.appendChild(price);
+        cardBodyDiv.appendChild(title);
+        cardBodyDiv.appendChild(bedrooms);
+        cardBodyDiv.appendChild(price);
 
-                property.buttons.forEach(buttonData => {
-                  const button = document.createElement('button');
-                  button.type = 'button';
-                  button.className = `btn btn-${buttonData.type}-primary mx-1 my-1`;
-                  button.textContent = buttonData.text;
-                  cardBodyDiv.appendChild(button);
-                });
+        property.buttons.forEach(buttonData => {
+          // Create an anchor tag instead of a button
+          const anchor = document.createElement('a');
+          anchor.href = buttonData.href || '#'; // Set the href attribute. Use '#' as a fallback.
+          anchor.className = `btn btn-${buttonData.type}-primary mx-1 my-1`;
+          anchor.textContent = buttonData.text;
 
-                cardDiv.appendChild(img);
-                cardDiv.appendChild(cardBodyDiv);
-                colDiv.appendChild(cardDiv);
-                container.appendChild(colDiv);
-              });
-            });
-          </script>
+          // If it's a download link, you might want to add the download attribute
+          if (buttonData.text.includes("DOWNLOAD")) {
+            anchor.setAttribute('download', '');
+          }
+
+          cardBodyDiv.appendChild(anchor);
+        });
+
+        cardDiv.appendChild(img);
+        cardDiv.appendChild(cardBodyDiv);
+        colDiv.appendChild(cardDiv);
+        container.appendChild(colDiv);
+      });
+    });
+</script>
         </div>
 
 
