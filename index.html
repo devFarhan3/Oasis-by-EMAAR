@@ -356,7 +356,10 @@
         </div>
       </div>
 
-    </section><!-- /About Section -->
+    </section>
+    <!-- /About Section -->
+
+    
 
     <!-- Contact Section -->
     <section id="contact_new" class="contact_new section">
@@ -535,6 +538,125 @@
 
     </section>
     <!-- /Contact Section -->
+
+        <!-- property_sec Section -->
+    <section id="property_sec" class="property_sec section" data-aos="fade-up" data-aos-delay="100"> 
+
+      <!-- Section Title -->
+      <div class="container section-title pb_40" data-aos="fade-up">
+        <h1 class="centered-border text-uppercase">The Oasis by Emaar Properties for Sale</h1>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-3">
+          <div id="property-cards-container" class="row justify-content-center">
+            <!-- Property cards will be injected here by JavaScript -->
+          </div>
+
+          <script>
+            const properties = [
+              {
+                name: "Address Villas Tiarra",
+                bedrooms: "4, 5 and 6 Bedroom Villas",
+                price: "13.2M AED",
+                image: "assets/img/o1.webp",
+                buttons: [
+                  { text: "LEARN MORE", type: "primary" },
+                  { text: "DOWNLOAD BROCHURE", type: "outline" }
+                ]
+              },
+              {
+                name: "Laviata",
+                bedrooms: "6 and 7 Bedroom Villas",
+                price: "36M AED",
+                image: "assets/img/o2.webp",
+                buttons: [
+                  { text: "DOWNLOAD BROCHURE", type: "outline" }
+                ]
+              },
+              {
+                name: "Mirage",
+                bedrooms: "5 and 6 Bedroom Villas",
+                price: "15.6M AED",
+               image: "assets/img/o3.webp",
+                buttons: [
+                  { text: "LEARN MORE", type: "primary" },
+                  { text: "DOWNLOAD BROCHURE", type: "outline" }
+                ]
+              },
+              {
+                name: "Palmiera 3",
+                bedrooms: "6 and 7 Bedroom Villas",
+                price: "36M AED",
+                 image: "assets/img/o4.webp",
+                buttons: [
+                  { text: "LEARN MORE", type: "primary" },
+                  { text: "DOWNLOAD BROCHURE", type: "outline" }
+                ]
+              }
+            ];
+
+            document.addEventListener('DOMContentLoaded', () => {
+              const container = document.getElementById('property-cards-container');
+
+              properties.forEach(property => {
+                const colDiv = document.createElement('div');
+                colDiv.className = 'col-12 col-md-6 col-lg-6 d-flex align-items-stretch gy-3';
+
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'property-card w-100';
+
+                const img = document.createElement('img');
+                img.src = property.image;
+                img.alt = property.name;
+                img.onerror = function () {
+                  this.onerror = null;
+                  this.src = 'https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found';
+                };
+
+                const cardBodyDiv = document.createElement('div');
+                cardBodyDiv.className = 'card-body';
+
+                const title = document.createElement('h5');
+                title.className = 'card-title';
+                title.textContent = property.name;
+
+                const bedrooms = document.createElement('p');
+                bedrooms.className = 'card-text';
+                bedrooms.textContent = property.bedrooms;
+
+                const price = document.createElement('p');
+                price.className = 'price-text';
+                price.textContent = `Starting Price ${property.price}`;
+
+                cardBodyDiv.appendChild(title);
+                cardBodyDiv.appendChild(bedrooms);
+                cardBodyDiv.appendChild(price);
+
+                property.buttons.forEach(buttonData => {
+                  const button = document.createElement('button');
+                  button.type = 'button';
+                  button.className = `btn btn-${buttonData.type}-primary mx-1 my-1`;
+                  button.textContent = buttonData.text;
+                  cardBodyDiv.appendChild(button);
+                });
+
+                cardDiv.appendChild(img);
+                cardDiv.appendChild(cardBodyDiv);
+                colDiv.appendChild(cardDiv);
+                container.appendChild(colDiv);
+              });
+            });
+          </script>
+        </div>
+
+
+
+      </div>
+
+    </section>
+    <!-- /property_sec Section -->
 
     <!-- Values Section -->
     <section id="values" class="values section">
@@ -1155,7 +1277,7 @@
     <!-- /location Section -->
 
     <!-- why-invest -->
-    <section class="why-invest">
+    <section class="why-invest" data-aos="fade-up" data-aos-delay="100">
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center gy-3">
           <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -1257,7 +1379,7 @@
     <!-- why-invest -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section" data-aos="fade-up" data-aos-delay="100">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -1435,124 +1557,7 @@
     <!-- /Contact Section -->
 
 
-    <!-- property_sec Section -->
-    <section id="property_sec" class="property_sec section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h1 class="centered-border text-uppercase">The Oasis by Emaar Properties for Sale</h1>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-3">
-          <div id="property-cards-container" class="row justify-content-center">
-            <!-- Property cards will be injected here by JavaScript -->
-          </div>
-
-          <script>
-            const properties = [
-              {
-                name: "Address Villas Tiarra",
-                bedrooms: "4, 5 and 6 Bedroom Villas",
-                price: "13.2M AED",
-                image: "assets/img/g1.webp",
-                buttons: [
-                  { text: "LEARN MORE", type: "primary" },
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              },
-              {
-                name: "Laviata",
-                bedrooms: "6 and 7 Bedroom Villas",
-                price: "36M AED",
-                image: "assets/img/g2.webp",
-                buttons: [
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              },
-              {
-                name: "Mirage",
-                bedrooms: "5 and 6 Bedroom Villas",
-                price: "15.6M AED",
-               image: "assets/img/g3.webp",
-                buttons: [
-                  { text: "LEARN MORE", type: "primary" },
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              },
-              {
-                name: "Palmiera 3",
-                bedrooms: "6 and 7 Bedroom Villas",
-                price: "36M AED",
-                 image: "assets/img/g4.webp",
-                buttons: [
-                  { text: "LEARN MORE", type: "primary" },
-                  { text: "DOWNLOAD BROCHURE", type: "outline" }
-                ]
-              }
-            ];
-
-            document.addEventListener('DOMContentLoaded', () => {
-              const container = document.getElementById('property-cards-container');
-
-              properties.forEach(property => {
-                const colDiv = document.createElement('div');
-                colDiv.className = 'col-12 col-md-6 col-lg-6 d-flex align-items-stretch gy-3';
-
-                const cardDiv = document.createElement('div');
-                cardDiv.className = 'property-card w-100';
-
-                const img = document.createElement('img');
-                img.src = property.image;
-                img.alt = property.name;
-                img.onerror = function () {
-                  this.onerror = null;
-                  this.src = 'https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found';
-                };
-
-                const cardBodyDiv = document.createElement('div');
-                cardBodyDiv.className = 'card-body';
-
-                const title = document.createElement('h5');
-                title.className = 'card-title';
-                title.textContent = property.name;
-
-                const bedrooms = document.createElement('p');
-                bedrooms.className = 'card-text';
-                bedrooms.textContent = property.bedrooms;
-
-                const price = document.createElement('p');
-                price.className = 'price-text';
-                price.textContent = `Starting Price ${property.price}`;
-
-                cardBodyDiv.appendChild(title);
-                cardBodyDiv.appendChild(bedrooms);
-                cardBodyDiv.appendChild(price);
-
-                property.buttons.forEach(buttonData => {
-                  const button = document.createElement('button');
-                  button.type = 'button';
-                  button.className = `btn btn-${buttonData.type}-primary mx-1 my-1`;
-                  button.textContent = buttonData.text;
-                  cardBodyDiv.appendChild(button);
-                });
-
-                cardDiv.appendChild(img);
-                cardDiv.appendChild(cardBodyDiv);
-                colDiv.appendChild(cardDiv);
-                container.appendChild(colDiv);
-              });
-            });
-          </script>
-        </div>
-
-
-
-      </div>
-
-    </section>
-    <!-- /property_sec Section -->
 
   </main>
 
@@ -1750,7 +1755,7 @@
           },
 
           submitHandler: function (form) {
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbw_9E3LwS-Yimec7vSkvwZBD94qw9RnxvjuEWfsBznDOy2NYIjt10HZ2BfJ0RL1XwfO/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz5EfOJNHxIRENDWEJit7Rmqz7OGhxnGoe9CuD9DkXYCK6OeaGeQE0wTmNSg7X-2-zb/exec'
 
             Swal.fire({
               title: 'Submitting...',
@@ -1950,7 +1955,7 @@
           },
 
           submitHandler: function (form) {
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbw_9E3LwS-Yimec7vSkvwZBD94qw9RnxvjuEWfsBznDOy2NYIjt10HZ2BfJ0RL1XwfO/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz5EfOJNHxIRENDWEJit7Rmqz7OGhxnGoe9CuD9DkXYCK6OeaGeQE0wTmNSg7X-2-zb/exec'
 
             Swal.fire({
               title: 'Submitting...',
